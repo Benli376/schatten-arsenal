@@ -21,6 +21,13 @@ jobs:
         run: |
           python3 tools/repair_assets.py
           tar -xJf shadow-assets.tar.xz -C src/main/resources
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pixel-art tools
+        run: python -m pip install pillow
+      - name: Generate upgraded Schatten-Arsenal artwork
+        run: python tools/generate_art.py
       - name: Start Minecraft Fabric server for validation
         shell: bash
         run: |

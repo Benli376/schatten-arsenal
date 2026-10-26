@@ -21,11 +21,18 @@ jobs:
         run: python3 tools/repair_assets.py
       - name: Install shadow textures
         run: tar -xJf shadow-assets.tar.xz -C src/main/resources
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pixel-art tools
+        run: python -m pip install pillow
+      - name: Generate upgraded Schatten-Arsenal artwork
+        run: python tools/generate_art.py
       - name: Build Fabric mod
         run: gradle --no-daemon clean build
       - name: Upload mod JAR
         uses: actions/upload-artifact@v4
         with:
           name: schatten-arsenal-jar
-          path: build/libs/schatten-arsenal-0.7.0.jar
+          path: build/libs/schatten-arsenal-0.8.0.jar
           if-no-files-found: error
