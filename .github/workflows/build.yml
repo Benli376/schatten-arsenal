@@ -23,5 +23,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: schatten-arsenal-jar
-          path: build/libs/schatten-arsenal-0.6.1.jar
+          path: build/libs/schatten-arsenal-0.7.0.jar
           if-no-files-found: error
