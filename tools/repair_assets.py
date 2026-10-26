@@ -7,7 +7,7 @@ segment="OjBk3qTHHZ6yLV+t8kb7J6b1rb7VdCXi8LiADDn/p6h89gXiJfzdI1FCYjEPuF5XDnL2fy9
 # The original 800-character span is preserved here verbatim.
 good_b64=encoded[:3200]+segment+encoded[3999:6779]
 fixed=base64.b64decode(good_b64,validate=True)
-digest=hashlib.sha1(("blob %d\\0"%len(fixed)).encode()+fixed).hexdigest()
+digest=hashlib.sha1(b'blob '+str(len(fixed)).encode()+bytes([0])+fixed).hexdigest()
 expected="25373735a51a4de4cc5261f16ecb1bc27c0562c2"
 if digest!=expected:
     raise SystemExit(f"Texture archive checksum mismatch: {digest}; expected {expected}")
