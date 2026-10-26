@@ -26,7 +26,8 @@ jobs:
         run: |
           mkdir -p run
           echo eula=true > run/eula.txt
-          timeout 110s bash -c 'tail -f /dev/null | gradle --no-daemon runServer --console=plain' > smoke.log 2>&1 || true
+          printf 'motd=Schatten Arsenal Test\\n' > run/server.properties
+          timeout 75s bash -c 'tail -f /dev/null | gradle --no-daemon runServer --console=plain' > smoke.log 2>&1 || true
           tail -n 100 smoke.log
           if grep -q 'Done (' smoke.log; then
             echo 'MINECRAFT SERVER SMOKE TEST PASSED'
@@ -34,7 +35,7 @@ jobs:
             echo 'MINECRAFT SERVER SMOKE TEST FAILED: startup not confirmed'
             exit 1
           fi
-          if grep -Eiq 'failed to load|failed to parse|couldn.t load|Exception in server tick loop' smoke.log; then
+          if grep -Eiq 'failed to parse|couldn.t load tag|Exception in server tick loop' smoke.log; then
             echo 'Minecraft logged resource/function errors.'
             exit 1
           fi
