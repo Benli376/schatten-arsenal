@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.Unit;
-import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.HoeItem;
@@ -57,9 +57,9 @@ public class SchattenArsenal implements ModInitializer {
         register("shadow_axe",p->new AxeItem(TOOL,6f,-3.0f,p),unbreakable());
         register("shadow_shovel",p->new ShovelItem(TOOL,1.5f,-3.0f,p),unbreakable());
         register("shadow_hoe",p->new HoeItem(TOOL,-4f,0f,p),unbreakable());
-        register("shadow_wither_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(EntityType.WITHER));
-        register("shadow_warden_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(EntityType.WARDEN));
-        register("shadow_knight_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(EntityType.WITHER_SKELETON));
+        register("shadow_wither_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("minecraft","wither"))));
+        register("shadow_warden_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("minecraft","warden"))));
+        register("shadow_knight_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("minecraft","wither_skeleton"))));
 
         ResourceKey<CreativeModeTab> key=ResourceKey.create(Registries.CREATIVE_MODE_TAB,id("shadow_arsenal"));
         CreativeModeTab tab=FabricCreativeModeTab.builder().title(Component.literal("Schatten-Arsenal"))
