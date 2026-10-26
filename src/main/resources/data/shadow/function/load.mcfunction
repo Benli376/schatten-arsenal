@@ -1,13 +1,9 @@
+# Shadows v0.8: remove old globally shared bossbars from existing saves.
+bossbar remove shadow:wither
+bossbar remove shadow:warden
+bossbar remove shadow:knight
 scoreboard objectives add shadow_timer dummy
-scoreboard objectives add shadow_boss dummy
-bossbar add shadow:wither {"text":"Violetter Schatten-Wither","color":"dark_purple","bold":true}
-bossbar add shadow:warden {"text":"Schatten-Warden","color":"dark_purple","bold":true}
-bossbar add shadow:knight {"text":"Schattenritter","color":"dark_purple","bold":true}
-bossbar set shadow:wither max 1024
-bossbar set shadow:warden max 1024
-bossbar set shadow:knight max 1024
-bossbar set shadow:wither color purple
-bossbar set shadow:warden color purple
-bossbar set shadow:knight color purple
+team add shadow_legends
+team modify shadow_legends color dark_purple
 scoreboard players set #timer shadow_timer 0
-tellraw @a {"text":"Schatten-Arsenal ist geladen! /function shadow:give/all","color":"light_purple"}
+tellraw @a {"text":"Schatten-Arsenal 0.8 geladen: neue Bossleisten und Boss-Drops!","color":"light_purple"}

@@ -1,7 +1,11 @@
 attribute @s minecraft:max_health base set 1024
 data merge entity @s {Health:1024.0f}
-attribute @s minecraft:attack_damage base set 40
-item replace entity @s weapon.mainhand with schattenarsenal:shadow_sword[enchantments={"minecraft:sharpness":50}]
+team join shadow_legends @s
+effect give @s minecraft:glowing 999999 0 true
+attribute @s minecraft:attack_damage base set 36
+item replace entity @s weapon.mainhand with schattenarsenal:shadow_sword
+item replace entity @s armor.head with schattenarsenal:shadow_helmet
 item replace entity @s armor.chest with schattenarsenal:shadow_chestplate
-scoreboard players set #knight shadow_boss 1
+item replace entity @s armor.legs with schattenarsenal:shadow_leggings
+item replace entity @s armor.feet with schattenarsenal:shadow_boots
 tag @s add shadow_initialized

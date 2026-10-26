@@ -1,0 +1,18 @@
+{
+  "item.schattenarsenal.shadow_helmet": "Schatten-Helm",
+  "item.schattenarsenal.shadow_chestplate": "Schatten-Brustplatte",
+  "item.schattenarsenal.shadow_leggings": "Schatten-Beinschutz",
+  "item.schattenarsenal.shadow_boots": "Schatten-Stiefel",
+  "item.schattenarsenal.shadow_sword": "Schattenklinge",
+  "item.schattenarsenal.shadow_pickaxe": "Schatten-Spitzhacke",
+  "item.schattenarsenal.shadow_axe": "Schatten-Axt",
+  "item.schattenarsenal.shadow_shovel": "Schatten-Schaufel",
+  "item.schattenarsenal.shadow_hoe": "Schatten-Hacke",
+  "item.schattenarsenal.shadow_wither_spawn_egg": "Schatten-Wither beschwören",
+  "item.schattenarsenal.shadow_warden_spawn_egg": "Schatten-Warden beschwören",
+  "item.schattenarsenal.shadow_knight_spawn_egg": "Schattenritter beschwören",
+  "item.schattenarsenal.shadow_wither_core": "Crown of the Shadow Wither",
+  "item.schattenarsenal.shadow_warden_heart": "Heart of the Shadow Warden",
+  "item.schattenarsenal.shadow_knight_sigil": "Sigil of the Shadow Knight",
+  "itemGroup.schattenarsenal.shadow_arsenal": "Schatten-Arsenal"
+}

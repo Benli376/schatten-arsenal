@@ -47,7 +47,7 @@ public class SchattenArsenal implements ModInitializer {
     static final ToolMaterial TOOL=new ToolMaterial(INCORRECT,3000,12.0F,6.0F,20,REPAIR);
 
     // Level 50: positive enchantments only; no Fortune, Frost Walker or curses.
-    private static final Map<String,String> ENCHANTS=Map.ofEntries(
+    static final Map<String,String> ENCHANTS=Map.ofEntries(
       Map.entry("shadow_helmet","protection,fire_protection,blast_protection,projectile_protection,respiration,aqua_affinity,thorns,unbreaking,mending"),
       Map.entry("shadow_chestplate","protection,fire_protection,blast_protection,projectile_protection,thorns,unbreaking,mending"),
       Map.entry("shadow_leggings","protection,fire_protection,blast_protection,projectile_protection,swift_sneak,thorns,unbreaking,mending"),
@@ -90,6 +90,7 @@ public class SchattenArsenal implements ModInitializer {
         ITEMS.put(name,item);
     }
     public void onInitialize(){
+        ShadowBosses.init();
         register("shadow_helmet",Item::new,unbreakable().humanoidArmor(ARMOR,ArmorType.HELMET).durability(ArmorType.HELMET.getDurability(37)));
         register("shadow_chestplate",Item::new,unbreakable().humanoidArmor(ARMOR,ArmorType.CHESTPLATE).durability(ArmorType.CHESTPLATE.getDurability(37)));
         register("shadow_leggings",Item::new,unbreakable().humanoidArmor(ARMOR,ArmorType.LEGGINGS).durability(ArmorType.LEGGINGS.getDurability(37)));
@@ -99,6 +100,9 @@ public class SchattenArsenal implements ModInitializer {
         register("shadow_axe",p->new AxeItem(TOOL,6f,-3.0f,p),unbreakable());
         register("shadow_shovel",p->new ShovelItem(TOOL,1.5f,-3.0f,p),unbreakable());
         register("shadow_hoe",p->new HoeItem(TOOL,-4f,0f,p),unbreakable());
+        register("shadow_wither_core",Item::new,new Item.Properties().fireResistant().stacksTo(16));
+        register("shadow_warden_heart",Item::new,new Item.Properties().fireResistant().stacksTo(16));
+        register("shadow_knight_sigil",Item::new,new Item.Properties().fireResistant().stacksTo(16));
         register("shadow_wither_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("minecraft","wither"))).component(DataComponents.ENTITY_DATA,shadowBossData("wither","shadow_wither","Violetter Schatten-Wither")));
         register("shadow_warden_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("minecraft","warden"))).component(DataComponents.ENTITY_DATA,shadowBossData("warden","shadow_warden","Schatten-Warden")));
         register("shadow_knight_spawn_egg",SpawnEggItem::new,new Item.Properties().spawnEgg(BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.fromNamespaceAndPath("minecraft","wither_skeleton"))).component(DataComponents.ENTITY_DATA,shadowBossData("wither_skeleton","shadow_knight","Schattenritter")));
