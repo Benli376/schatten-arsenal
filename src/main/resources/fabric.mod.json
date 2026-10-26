@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "schattenarsenal",
+  "version": "${version}",
+  "name": "Schatten-Arsenal",
+  "description": "Eigene Schattenausruestung und Schattenbosse",
+  "environment": "*",
+  "entrypoints": {"main": ["de.schattenarsenal.SchattenArsenal"]},
+  "depends": {"fabricloader": ">=0.19.3", "minecraft": "26.2", "java": ">=25", "fabric-api": "*"}
+}
