@@ -32,7 +32,7 @@ jobs:
             sleep 35
             echo 'summon minecraft:wither_skeleton 0 280 0 {Tags:["shadow_knight"],PersistenceRequired:1b}'
             sleep 4
-            echo 'damage @e[tag=shadow_knight] 1200 minecraft:generic'
+            echo 'damage @e[tag=shadow_knight,limit=1] 1200 minecraft:generic'
             sleep 5
             echo 'execute if entity @e[type=minecraft:item,nbt={Item:{id:"schattenarsenal:shadow_knight_sigil"}}] run say SHADOW_DROP_CHECK_OK'
             sleep 2
