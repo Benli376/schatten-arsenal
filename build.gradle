@@ -2,7 +2,7 @@ plugins {
     id 'net.fabricmc.fabric-loom' version "${loom_version}"
     id 'maven-publish'
 }
-version = '0.6.1'
+version = '0.7.0'
 group = 'de.schattenarsenal'
 base { archivesName = 'schatten-arsenal' }
 repositories {
