@@ -17,6 +17,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '9.5.1'
+      - name: Install shadow textures
+        run: tar -xJf shadow-assets.tar.xz -C src/main/resources
       - name: Build Fabric mod
         run: gradle --no-daemon clean build
       - name: Upload mod JAR
