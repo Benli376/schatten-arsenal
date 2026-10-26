@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
 
-import net.fabricmc.fabric.api.entity.event.v1.ServerEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.ChatFormatting;
@@ -90,9 +90,9 @@ public final class ShadowBosses {
     }
 
     private static String kind(Entity entity) {
-        if (entity.getTags().contains("shadow_wither")) return "wither";
-        if (entity.getTags().contains("shadow_warden")) return "warden";
-        if (entity.getTags().contains("shadow_knight")) return "knight";
+        if (entity.entityTags().contains("shadow_wither")) return "wither";
+        if (entity.entityTags().contains("shadow_warden")) return "warden";
+        if (entity.entityTags().contains("shadow_knight")) return "knight";
         return null;
     }
 
@@ -108,7 +108,7 @@ public final class ShadowBosses {
         if (!(entity instanceof LivingEntity living)) return;
         String kind = kind(entity);
         if (kind == null || kind.equals("wither") || HUDS.containsKey(entity.getUUID())) return;
-        ServerBossEvent bar = new ServerBossEvent(
+        ServerBossEvent bar = new ServerBossEvent(entity.getUUID(),
             Component.literal("✦ " + label(kind) + " ✦").withStyle(ChatFormatting.LIGHT_PURPLE),
             BossEvent.BossBarColor.PURPLE, BossEvent.BossBarOverlay.PROGRESS);
         bar.setProgress(1.0f);
