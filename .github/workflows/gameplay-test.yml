@@ -30,8 +30,13 @@ jobs:
           printf 'online-mode=false\nspawn-protection=0\n' > run/server.properties
           (
             sleep 35
-            echo 'summon minecraft:wither_skeleton 0 280 0 {Tags:["shadow_knight"],PersistenceRequired:1b}'
-            sleep 4
+            echo 'forceload add 0 0'
+            echo 'setblock 0 148 0 minecraft:stone'
+            echo 'summon minecraft:wither_skeleton 0 150 0 {Tags:["shadow_knight"],PersistenceRequired:1b}'
+            echo 'execute if entity @e[type=minecraft:wither_skeleton,limit=1] run say SHADOW_MOB_PRESENT'
+            echo 'execute if entity @e[tag=shadow_knight,limit=1] run say SHADOW_TAG_PRESENT'
+            echo 'data get entity @e[type=minecraft:wither_skeleton,limit=1] Tags'
+            sleep 2
             echo 'damage @e[tag=shadow_knight,limit=1] 1200 minecraft:generic'
             sleep 5
             echo 'execute if entity @e[type=minecraft:item,nbt={Item:{id:"schattenarsenal:shadow_knight_sigil"}}] run say SHADOW_DROP_CHECK_OK'
