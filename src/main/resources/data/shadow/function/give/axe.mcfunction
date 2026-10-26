@@ -1,0 +1,1 @@
+give @s schattenarsenal:shadow_axe[unbreakable={},enchantments={"minecraft:efficiency":50,"minecraft:silk_touch":50,"minecraft:sharpness":50,"minecraft:smite":50,"minecraft:bane_of_arthropods":50,"minecraft:unbreaking":50,"minecraft:mending":50}] 1

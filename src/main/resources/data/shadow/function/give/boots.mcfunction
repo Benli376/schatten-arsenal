@@ -1,0 +1,1 @@
+give @s schattenarsenal:shadow_boots[unbreakable={},enchantments={"minecraft:protection":50,"minecraft:fire_protection":50,"minecraft:blast_protection":50,"minecraft:projectile_protection":50,"minecraft:feather_falling":50,"minecraft:depth_strider":50,"minecraft:soul_speed":50,"minecraft:thorns":50,"minecraft:unbreaking":50,"minecraft:mending":50}] 1

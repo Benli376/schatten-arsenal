@@ -1,0 +1,1 @@
+give @s schattenarsenal:shadow_sword[unbreakable={},enchantments={"minecraft:sharpness":50,"minecraft:smite":50,"minecraft:bane_of_arthropods":50,"minecraft:knockback":50,"minecraft:fire_aspect":50,"minecraft:looting":50,"minecraft:sweeping_edge":50,"minecraft:unbreaking":50,"minecraft:mending":50}] 1

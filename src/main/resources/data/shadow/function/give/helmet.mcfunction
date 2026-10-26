@@ -1,0 +1,1 @@
+give @s schattenarsenal:shadow_helmet[unbreakable={},enchantments={"minecraft:protection":50,"minecraft:fire_protection":50,"minecraft:blast_protection":50,"minecraft:projectile_protection":50,"minecraft:respiration":50,"minecraft:aqua_affinity":50,"minecraft:thorns":50,"minecraft:unbreaking":50,"minecraft:mending":50}] 1
